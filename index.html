@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Daily Badminton Routine</title>
+    <style>
+        :root {
+            --bg1: #eef6ff;
+            --bg2: #ffffff;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --accent-2: #f43f5e;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+            --maxw: 980px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg1), var(--bg2));
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #0f172a;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 32px auto;
+            padding: 28px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0 0 6px;
+            line-height: 1;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .btn {
+            border: 0;
+            background: var(--accent);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn-ghost {
+            background: white;
+            border: 1px solid #e6e9ef;
+            color: #111;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 22px;
+        }
+
+        @media(min-width:900px) {
+            main {
+                grid-template-columns: 1fr 360px;
+            }
+        }
+
+        .schedule {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .slot {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            padding: 14px;
+            border: 1px solid #e6e9ef;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .slot .time {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .slot .title {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .slot:hover {
+            background: #f8fafc;
+        }
+
+        .badge-lunch {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .rest {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e3a8a;
+        }
+
+        .super {
+            background: #fff1f2;
+            border: 1px solid #fecaca;
+            color: #9f1239;
+        }
+
+        .aside {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .panel {
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #eef2ff;
+            background: #fbfdff;
+        }
+
+        .panel h4 {
+            margin: 0 0 8px;
+            font-size: 15px;
+        }
+
+        .list {
+            margin: 0;
+            padding-left: 18px;
+            color: #334155;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* checkbox custom */
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #2563eb;
+        }
+
+        /* print styles */
+        @media print {
+            body {
+                background: white !important;
+            }
+
+            .btn,
+            .controls,
+            .aside {
+                display: none;
+            }
+
+            .wrap {
+                margin: 0;
+                padding: 0;
+                max-width: unset;
+            }
+
+            .card {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card">
+            <header>
+                <div>
+                    <h1>Daily Badminton Routine</h1>
+                    <p class="meta" id="metaDate">--</p>
+                    <p class="small" id="countdown" style="margin:6px 0 0"></p>
+                </div>
+
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <button class="btn" id="printBtn">Print Schedule</button>
+                </div>
+            </header>
+
+            <main>
+                <section>
+                    <h2 style="margin:8px 0 12px">Today's Schedule</h2>
+
+                    <div id="schedule" class="schedule" aria-live="polite"></div>
+
+                    <div class="controls">
+                        <button class="btn-ghost" id="markAll">Mark all done</button>
+                        <button class="btn-ghost" id="clearAll">Clear all</button>
+                        <div style="flex:1"></div>
+                    </div>
+                </section>
+
+                <aside class="aside">
+                    <div class="panel">
+                        <h4>Daily Routine Notes</h4>
+                        <ul class="list">
+                            <li>Arrive 10 minutes early for warm-up and court prep.</li>
+                            <li>Hydrate between drills; short 30–60s rests between intense sets.</li>
+                            <li>Focus on technical quality first, then speed/power.</li>
+                            <li>During multi-shuttle, keep rally control and return to T quickly.</li>
+                            <li>After practice, log notes: what worked, what to improve.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h4>Coach's checklist (daily)</h4>
+                        <ol class="list">
+                            <li>Confirm court availability & feeders.</li>
+                            <li>Check shuttle quantity and warm-up shuttles.</li>
+                            <li>Ensure proper drills sequence: warm-up → footwork → technical → rally → cooldown.</li>
+                            <li>Record attendance and any injuries.</li>
+                        </ol>
+                    </div>
+
+                    <div class="panel">
+                        <h4>Progress tips</h4>
+                        <ul class="list">
+                            <li>High Clears: consistent height & deep placement.</li>
+                            <li>Drops: soft touch and variable angle.</li>
+                            <li>Smashes: power + placement and immediate recovery to T.</li>
+                        </ul>
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            // Schedule definition (ordered). Times are strings for display.
+            const scheduleTemplate = [
+                { id: "warmup", start: "08:00", end: "08:10", title: "Dynamic warm-up (10 min) - jogging, leg swings, band pulls" },
+                { id: "footwork", start: "08:10", end: "08:25", title: "Footwork ladder & shadow movement (15 min) - forward/backward, lunges" },
+                { id: "high_clears", start: "08:25", end: "08:45", title: "High clears (20 min) - deep clears, alternate forehand/backhand" },
+                { id: "drops", start: "08:45", end: "09:05", title: "Drop shots (20 min) - front drops, cross-court drops" },
+                { id: "net_play", start: "09:05", end: "09:20", title: "Net play & drives (15 min) - tight net shots, pushes" },
+                { id: "smash", start: "09:20", end: "09:35", title: "Smash practice (15 min) - placement + recovery" },
+                { id: "multi_shuttle", start: "09:35", end: "09:55", title: "Multi-shuttle consistency (20 min) - coach feeds, rally control" },
+                { id: "defense", start: "09:55", end: "10:10", title: "Defense & recovery (15 min) - block/drive defense, recover to T" },
+                // fixed match plays
+                { id: "singles_vs_singles", start: "10:20", end: "11:10", title: "Singles vs Singles Match Play (10:20 — 11:10)" },
+                { id: "singles_vs_doubles", start: "11:10", end: "12:00", title: "Two Singles vs Doubles Match Play (11:10 — 12:00)" },
+                // Lunch
+                { id: "lunch", start: "12:00", end: "13:00", title: "Lunch break (rest, hydration, light mobility)", special: "lunch" },
+                // cooldown after lunch
+                { id: "cooldown", start: "13:00", end: "13:10", title: "Cool-down & stretching (10 min) - mobility + breathing" },
+                // rest then super advanced
+                { id: "rest", start: "13:10", end: "14:30", title: "Rest & recovery in preparation for Super-Advanced training", special: "rest" },
+                { id: "super", start: "14:30", end: "", title: "Super-Advanced training session (coach-led)", special: "super" }
+            ];
+
+            const scheduleEl = document.getElementById('schedule');
+            const metaDate = document.getElementById('metaDate');
+            const printBtn = document.getElementById('printBtn');
+            const markAll = document.getElementById('markAll');
+            const clearAll = document.getElementById('clearAll');
+            const countdownEl = document.getElementById('countdown');
+
+            // daily key for localStorage
+            function todayKeyString() {
+                const d = new Date();
+                const yyyy = d.getFullYear();
+                const mm = String(d.getMonth() + 1).padStart(2, '0');
+                const dd = String(d.getDate()).padStart(2, '0');
+                return `badminton_todo_${yyyy}${mm}${dd}`;
+            }
+
+            function loadState() {
+                try {
+                    const raw = localStorage.getItem(todayKeyString());
+                    if (!raw) return {};
+                    return JSON.parse(raw);
+                } catch (e) { return {}; }
+            }
+            function saveState(state) {
+                try { localStorage.setItem(todayKeyString(), JSON.stringify(state)); } catch (e) { }
+            }
+
+            // render schedule
+            function render() {
+                scheduleEl.innerHTML = '';
+                const state = loadState();
+                // show date meta
+                const d = new Date();
+                metaDate.textContent = `${d.toLocaleDateString()} • 8:00 — 14:30 (12:00—13:00 lunch)`;
+
+                scheduleTemplate.forEach(item => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'slot';
+
+                    // style special
+                    if (item.special === 'lunch') { wrapper.classList.add('badge-lunch'); }
+                    if (item.special === 'rest') { wrapper.classList.add('rest'); }
+                    if (item.special === 'super') { wrapper.classList.add('super'); }
+
+                    const left = document.createElement('div');
+                    const time = document.createElement('div'); time.className = 'time'; time.textContent = `${item.start}${item.end ? ' — ' + item.end : ''}`;
+                    const title = document.createElement('div'); title.className = 'title'; title.textContent = item.title;
+                    left.appendChild(time); left.appendChild(title);
+
+                    wrapper.appendChild(left);
+
+                    // if lunch or super - no checkbox for lunch? we'll still show for cooldown but not lunch
+                    if (item.id !== 'lunch' && item.id !== 'super') {
+                        const label = document.createElement('label');
+                        label.className = 'inline-flex';
+                        const cb = document.createElement('input');
+                        cb.type = 'checkbox';
+                        cb.checked = !!state[item.id];
+                        cb.addEventListener('change', () => {
+                            state[item.id] = cb.checked;
+                            saveState(state);
+                        });
+                        const span = document.createElement('span');
+                        span.style.marginLeft = '8px';
+                        span.textContent = 'Done';
+                        label.appendChild(cb);
+                        label.appendChild(span);
+                        wrapper.appendChild(label);
+                    } else {
+                        // for lunch/super show subtle text on the right
+                        const right = document.createElement('div');
+                        right.className = 'small';
+                        right.textContent = item.special === 'lunch' ? '' : '';
+                        wrapper.appendChild(right);
+                    }
+
+                    scheduleEl.appendChild(wrapper);
+                });
+            }
+
+            // mark all / clear all
+            markAll.addEventListener('click', () => {
+                const state = {};
+                scheduleTemplate.forEach(s => { if (s.id !== 'lunch' && s.id !== 'super') state[s.id] = true; });
+                saveState(state);
+                render();
+            });
+            clearAll.addEventListener('click', () => {
+                const state = {};
+                scheduleTemplate.forEach(s => { if (s.id !== 'lunch' && s.id !== 'super') state[s.id] = false; });
+                saveState(state);
+                render();
+            });
+
+            printBtn.addEventListener('click', () => window.print());
+
+            // auto reload at midnight + cleanup old keys (keep only today's)
+            function scheduleMidnightReload() {
+                const now = new Date();
+                const next = new Date(now);
+                next.setHours(24, 0, 5, 0); // a little after midnight
+                const ms = next - now;
+                setTimeout(() => {
+                    // optional cleanup: remove older keys
+                    try {
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const k = localStorage.key(i);
+                            if (k && k.startsWith('badminton_todo_') && k !== todayKeyString()) {
+                                localStorage.removeItem(k);
+                                // restart loop safety
+                                i = -1;
+                            }
+                        }
+                    } catch (e) { }
+                    // reload to reset UI
+                    window.location.reload();
+                }, ms);
+            }
+
+            // countdown to midnight display
+            function startCountdown() {
+                function update() {
+                    const now = new Date();
+                    const next = new Date(now);
+                    next.setHours(24, 0, 0, 0);
+                    let diff = Math.max(0, next - now);
+                    const s = Math.floor(diff / 1000) % 60;
+                    const m = Math.floor(diff / 60000) % 60;
+                    const h = Math.floor(diff / 3600000);
+                    countdownEl.textContent = `Auto-refreshes daily at midnight • Next refresh in ${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+                }
+                update();
+                setInterval(update, 1000);
+            }
+
+            // initialize default state if not present
+            function ensureInitState() {
+                const s = loadState();
+                let changed = false;
+                scheduleTemplate.forEach(item => {
+                    if (item.id === 'lunch' || item.id === 'super') return;
+                    if (typeof s[item.id] === 'undefined') { s[item.id] = false; changed = true; }
+                });
+                if (changed) saveState(s);
+            }
+
+            // Start
+            ensureInitState();
+            render();
+            scheduleMidnightReload();
+            startCountdown();
+
+        })();
+    </script>
+    <footer style="text-align: center; padding: 20px; color: var(--muted); font-size: 20px; margin-top: 40px;">
+        Created by Preal Jesse Gepulgane
+    </footer>
+</body>
+
+</html>
+</body>
+
+</html>
