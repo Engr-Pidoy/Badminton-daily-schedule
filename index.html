@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Badminton Training with Drill Videos</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tournament Badminton Training — Proper Drill Videos</title>
     <style>
         * {
             margin: 0;
@@ -13,13 +13,13 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
 
-        /* LOGIN STYLES */
+        /* LOGIN */
         .login-container {
             display: flex;
             justify-content: center;
@@ -29,10 +29,10 @@
         }
 
         .login-form {
-            background: white;
+            background: #fff;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
             max-width: 400px;
             width: 100%;
         }
@@ -50,7 +50,6 @@
 
         .login-header p {
             color: #666;
-            font-size: 1rem;
         }
 
         .form-group {
@@ -70,7 +69,7 @@
             border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: border-color .3s;
         }
 
         .form-group input:focus {
@@ -82,13 +81,13 @@
             width: 100%;
             padding: 12px;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: transform .2s;
         }
 
         .login-btn:hover {
@@ -110,35 +109,35 @@
             display: block;
         }
 
-        /* EXISTING STYLES */
+        /* LAYOUT */
         .container {
             max-width: 1600px;
             margin: 0 auto;
-            background: white;
+            background: #fff;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
             overflow: hidden;
         }
 
         .header {
+            position: relative;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
+            color: #fff;
             text-align: center;
             padding: 30px;
-            position: relative;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
         }
 
         .logout-btn {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: rgba(255, 255, 255, .2);
+            color: #fff;
             border: none;
             padding: 8px 16px;
             border-radius: 20px;
@@ -147,7 +146,7 @@
         }
 
         .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, .3);
         }
 
         .week-nav {
@@ -161,12 +160,12 @@
 
         .day-tab {
             padding: 12px 24px;
-            background: white;
+            background: #fff;
             border: 2px solid #ddd;
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
             font-weight: bold;
+            transition: all .3s;
         }
 
         .day-tab:hover {
@@ -176,7 +175,7 @@
 
         .day-tab.active {
             background: #4ecdc4;
-            color: white;
+            color: #fff;
             border-color: #4ecdc4;
         }
 
@@ -198,17 +197,17 @@
         }
 
         .day-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .day-focus {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.05rem;
+            color: #555;
             background: #e3f2fd;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 10px 18px;
+            border-radius: 18px;
             display: inline-block;
         }
 
@@ -224,35 +223,63 @@
             border-radius: 12px;
             padding: 20px;
             border: 3px solid transparent;
-            transition: all 0.3s ease;
+            transition: all .3s;
         }
 
         .session-card:hover {
             border-color: #4ecdc4;
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+        }
+
+        .session-card.trainer-session {
+            border: 3px solid #ff6b6b;
+            background: #fff5f5;
+        }
+
+        .session-card.trainer-session:hover {
+            border-color: #ff3333;
         }
 
         .session-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .time-badge {
             background: #ff6b6b;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 16px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: .9rem;
+        }
+
+        .time-badge.trainer {
+            background: #8b0000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.7
+            }
+
+            100% {
+                opacity: 1
+            }
         }
 
         .intensity-badge {
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 12px;
-            font-size: 0.8rem;
+            font-size: .8rem;
             font-weight: bold;
         }
 
@@ -271,15 +298,35 @@
             color: #c62828;
         }
 
+        .intensity-trainer {
+            background: #8b0000;
+            color: #fff;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #8b0000
+            }
+
+            50% {
+                box-shadow: 0 0 20px #ff0000
+            }
+
+            100% {
+                box-shadow: 0 0 5px #8b0000
+            }
+        }
+
         .intensity-rest {
             background: #e1f5fe;
             color: #0277bd;
         }
 
         .session-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: bold;
         }
 
@@ -288,15 +335,15 @@
         }
 
         .drill-item {
-            background: white;
+            background: #fff;
             margin: 6px 0;
             padding: 10px;
             border-radius: 8px;
             border-left: 4px solid #4ecdc4;
-            transition: all 0.2s ease;
             cursor: pointer;
             position: relative;
-            font-size: 0.9rem;
+            transition: all .2s;
+            font-size: .92rem;
         }
 
         .drill-item:hover {
@@ -312,9 +359,23 @@
             font-size: 1rem;
         }
 
+        .drill-item.trainer-drill {
+            border-left: 4px solid #ff0000;
+            background: #fff8f8;
+        }
+
+        .drill-item.trainer-drill::after {
+            content: "👨‍🏫🎥";
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 1rem;
+        }
+
         .drill-item.rest-item {
             border-left-color: #0277bd;
             background: #f0f8ff;
+            cursor: default;
         }
 
         .drill-item.rest-item::after {
@@ -329,7 +390,7 @@
             font-weight: bold;
             color: #ff6b6b;
             margin-right: 8px;
-            font-size: 0.85rem;
+            font-size: .85rem;
         }
 
         .drill-name {
@@ -337,13 +398,11 @@
             font-weight: 500;
         }
 
+        /* Modal */
         .video-modal {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            inset: 0;
+            background: rgba(0, 0, 0, .8);
             display: none;
             justify-content: center;
             align-items: center;
@@ -355,64 +414,59 @@
         }
 
         .video-content {
-            background: white;
+            background: #fff;
             border-radius: 15px;
             padding: 20px;
-            max-width: 800px;
-            width: 90%;
-            max-height: 90%;
-            overflow-y: auto;
+            max-width: 900px;
+            width: 92%;
+            max-height: 90vh;
+            overflow: auto;
         }
 
         .video-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .video-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #333;
             margin: 0;
         }
 
         .close-modal {
             background: #ff6b6b;
-            color: white;
+            color: #fff;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 8px 14px;
+            border-radius: 18px;
             cursor: pointer;
             font-weight: bold;
         }
 
         .video-iframe {
             width: 100%;
-            height: 400px;
-            border-radius: 8px;
+            height: 420px;
             border: none;
-            margin-bottom: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
         .video-description {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             color: #666;
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width:768px) {
             .session-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .video-content {
-                width: 95%;
-                padding: 15px;
             }
 
             .video-iframe {
@@ -420,617 +474,426 @@
             }
 
             .login-form {
-                padding: 30px 20px;
-            }
-
-            .drill-item {
-                font-size: 0.85rem;
-            }
-
-            .time-slot {
-                font-size: 0.8rem;
+                padding: 28px 20px;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- LOGIN FORM -->
+    <!-- LOGIN -->
     <div class="login-container" id="loginContainer">
         <div class="login-form">
             <div class="login-header">
                 <h1>🏸 Badminton Training</h1>
-                <p>Please login to access your training videos</p>
+                <p>Login to access the drills</p>
             </div>
             <form id="loginForm">
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" required />
                 </div>
-                <button type="submit" class="login-btn">Login</button>
-                <div class="error-message" id="errorMessage">
-                    Invalid email or password. Please try again.
-                </div>
+                <button class="login-btn" type="submit">Login</button>
+                <div id="errorMessage" class="error-message">Invalid email or password.</div>
             </form>
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <div class="main-content" id="mainContent">
         <div class="container">
             <div class="header">
                 <button class="logout-btn" onclick="logout()">Logout</button>
-                <h1>🏸 Tournament Advanced Badminton Training</h1>
-                <p>Professional Level Training with Individual Drill Videos</p>
+                <h1>🏆 Tournament Badminton Training</h1>
+                <p>Properly matched videos for each drill</p>
             </div>
 
             <div class="week-nav">
-                <div class="day-tab active" onclick="showDay('monday')">Monday</div>
-                <div class="day-tab" onclick="showDay('tuesday')">Tuesday</div>
-                <div class="day-tab" onclick="showDay('wednesday')">Wednesday</div>
-                <div class="day-tab" onclick="showDay('thursday')">Thursday</div>
-                <div class="day-tab" onclick="showDay('friday')">Friday</div>
+                <div class="day-tab active" onclick="showDay('monday', this)">Monday</div>
+                <div class="day-tab" onclick="showDay('tuesday', this)">Tuesday</div>
+                <div class="day-tab" onclick="showDay('wednesday', this)">Wednesday</div>
+                <div class="day-tab" onclick="showDay('thursday', this)">Thursday</div>
+                <div class="day-tab" onclick="showDay('friday', this)">Friday</div>
             </div>
 
             <div class="schedule-content">
-                <!-- MONDAY SCHEDULE - 7:20 AM to 11:35 AM -->
+                <!-- MONDAY 1:00–4:00 PM -->
                 <div class="day-schedule active" id="monday">
                     <div class="day-header">
-                        <div class="day-title">Monday - Tournament Technical Mastery</div>
-                        <div class="day-focus">🎯 Advanced Technical Training for Competition</div>
+                        <div class="day-title">Monday — Technical Mastery</div>
+                        <div class="day-focus">Daily fundamentals + advanced technique + trainer session</div>
                     </div>
 
                     <div class="session-grid">
-                        <!-- Morning Preparation 7:20-8:40 -->
                         <div class="session-card">
                             <div class="session-header">
-                                <div class="time-badge">7:20 - 8:40 AM</div>
-                                <div class="intensity-badge intensity-medium">PREPARATION</div>
+                                <div class="time-badge">1:00 – 2:00 PM</div>
+                                <div class="intensity-badge intensity-medium">DAILY BASICS</div>
                             </div>
-                            <div class="session-title">Morning Activation & Base Work</div>
+                            <div class="session-title">Daily Foundation</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('mon_jogging')">
-                                    <span class="time-slot">7:20-7:30</span>
-                                    <span class="drill-name">Light Jogging & Court Familiarization</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_stretching')">
-                                    <span class="time-slot">7:30-7:40</span>
-                                    <span class="drill-name">Dynamic Stretching & Joint Mobility</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_shadow')">
-                                    <span class="time-slot">7:40-7:55</span>
-                                    <span class="drill-name">Advanced Shadow Training</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">7:55-8:00</span>
-                                    <span class="drill-name">Hydration Break</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_grip')">
-                                    <span class="time-slot">8:00-8:15</span>
-                                    <span class="drill-name">Grip Technique Mastery</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_serves')">
-                                    <span class="time-slot">8:15-8:35</span>
-                                    <span class="drill-name">Tournament Serve Variations</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">8:35-8:40</span>
-                                    <span class="drill-name">Quick Rest</span>
-                                </li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_jogging')"><span
+                                        class="time-slot">1:00–1:10</span><span class="drill-name">Daily Jogging & Court
+                                        Movement</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_stretching')"><span
+                                        class="time-slot">1:10–1:20</span><span class="drill-name">Daily Stretching &
+                                        Mobility</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('mon_shadow')"><span
+                                        class="time-slot">1:20–1:35</span><span class="drill-name">Advanced Shadow
+                                        Training</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">1:35–1:40</span><span
+                                        class="drill-name">Hydration Break</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('mon_grip')"><span
+                                        class="time-slot">1:40–1:55</span><span class="drill-name">Grip Technique
+                                        Mastery</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">1:55–2:00</span><span
+                                        class="drill-name">Quick Rest</span></li>
                             </ul>
                         </div>
 
-                        <!-- Technical Skills 8:40-10:10 -->
-                        <div class="session-card">
+                        <div class="session-card trainer-session">
                             <div class="session-header">
-                                <div class="time-badge">8:40 - 10:10 AM</div>
-                                <div class="intensity-badge intensity-high">TECHNICAL</div>
+                                <div class="time-badge trainer">2:00 – 4:00 PM</div>
+                                <div class="intensity-badge intensity-trainer">👨‍🏫 WITH TRAINER</div>
                             </div>
-                            <div class="session-title">Advanced Shot Mastery</div>
+                            <div class="session-title">🔥 HARDEST DRILLS - Elite Training Session</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('mon_clears')">
-                                    <span class="time-slot">8:40-8:55</span>
-                                    <span class="drill-name">Power Clear Technique</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_drops')">
-                                    <span class="time-slot">8:55-9:10</span>
-                                    <span class="drill-name">Deceptive Drop Shots</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_smash')">
-                                    <span class="time-slot">9:10-9:25</span>
-                                    <span class="drill-name">Tournament Smash Power</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">9:25-9:30</span>
-                                    <span class="drill-name">Recovery Break</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_netplay')">
-                                    <span class="time-slot">9:30-9:45</span>
-                                    <span class="drill-name">Advanced Net Play</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_defense')">
-                                    <span class="time-slot">9:45-10:00</span>
-                                    <span class="drill-name">Defensive Returns</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">10:00-10:10</span>
-                                    <span class="drill-name">Hydration & Equipment Check</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Tournament Preparation 10:10-11:35 -->
-                        <div class="session-card">
-                            <div class="session-header">
-                                <div class="time-badge">10:10 - 11:35 AM</div>
-                                <div class="intensity-badge intensity-high">TOURNAMENT</div>
-                            </div>
-                            <div class="session-title">Competition Ready Drills</div>
-                            <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('mon_multishuttle')">
-                                    <span class="time-slot">10:10-10:30</span>
-                                    <span class="drill-name">High-Speed Multi-Shuttle</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_footwork')">
-                                    <span class="time-slot">10:30-10:50</span>
-                                    <span class="drill-name">Advanced Footwork Patterns</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">10:50-10:55</span>
-                                    <span class="drill-name">Quick Recovery</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_combination')">
-                                    <span class="time-slot">10:55-11:15</span>
-                                    <span class="drill-name">Shot Combination Drills</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_conditioning')">
-                                    <span class="time-slot">11:15-11:30</span>
-                                    <span class="drill-name">Court Conditioning</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('mon_cooldown')">
-                                    <span class="time-slot">11:30-11:35</span>
-                                    <span class="drill-name">Cool Down & Recovery</span>
-                                </li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_multifeed_hell')"><span
+                                        class="time-slot">2:00–2:15</span><span class="drill-name">Multi-Feed Hell
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_defense_drill')"><span
+                                        class="time-slot">2:15–2:30</span><span class="drill-name">Defensive Training
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_smash_endurance')">
+                                    <span class="time-slot">2:30–2:45</span><span class="drill-name">Continuous Smash
+                                        Torture</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">2:45–2:50</span><span
+                                        class="drill-name">Recovery (Trainer Feedback)</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_footwork_torture')">
+                                    <span class="time-slot">2:50–3:05</span><span class="drill-name">4-Corner Footwork
+                                        Torture</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_speed_training')"><span
+                                        class="time-slot">3:05–3:20</span><span class="drill-name">Speed Training
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_half_court')"><span
+                                        class="time-slot">3:20–3:35</span><span class="drill-name">Half-Court Training
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_pace_training')"><span
+                                        class="time-slot">3:35–3:50</span><span class="drill-name">Change of Pace
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_cooldown')"><span
+                                        class="time-slot">3:50–4:00</span><span class="drill-name">Cool Down &
+                                        Recovery</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- TUESDAY SCHEDULE - 1:00 PM to 4:00 PM -->
+                <!-- TUESDAY 7:30–11:30 AM -->
                 <div class="day-schedule" id="tuesday">
                     <div class="day-header">
-                        <div class="day-title">Tuesday - Power & Athletic Development</div>
-                        <div class="day-focus">💪 Explosive Power for Tournament Performance</div>
+                        <div class="day-title">Tuesday — Power & Athletic Development</div>
+                        <div class="day-focus">Daily fundamentals + explosive power + trainer session</div>
                     </div>
-
                     <div class="session-grid">
-                        <!-- Power Foundation 1:00-2:00 -->
                         <div class="session-card">
                             <div class="session-header">
-                                <div class="time-badge">1:00 - 2:00 PM</div>
-                                <div class="intensity-badge intensity-high">POWER</div>
+                                <div class="time-badge">7:30 – 9:30 AM</div>
+                                <div class="intensity-badge intensity-medium">DAILY BASICS</div>
                             </div>
-                            <div class="session-title">Explosive Power Development</div>
+                            <div class="session-title">Daily Foundation + Power Base</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('tue_activation')">
-                                    <span class="time-slot">1:00-1:10</span>
-                                    <span class="drill-name">Neural Activation Warm-up</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_plyometrics')">
-                                    <span class="time-slot">1:10-1:25</span>
-                                    <span class="drill-name">Plyometric Jump Training</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_medicine')">
-                                    <span class="time-slot">1:25-1:40</span>
-                                    <span class="drill-name">Medicine Ball Power</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">1:40-1:45</span>
-                                    <span class="drill-name">Recovery Break</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_sprint')">
-                                    <span class="time-slot">1:45-2:00</span>
-                                    <span class="drill-name">Court Sprint Training</span>
-                                </li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_jogging')"><span
+                                        class="time-slot">7:30–7:40</span><span class="drill-name">Daily Jogging & Court
+                                        Movement</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_stretching')"><span
+                                        class="time-slot">7:40–7:50</span><span class="drill-name">Daily Stretching &
+                                        Mobility</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('tue_warmup')"><span
+                                        class="time-slot">7:50–8:10</span><span class="drill-name">Badminton Specific
+                                        Warm-up</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('tue_speed_training')"><span
+                                        class="time-slot">8:10–8:25</span><span class="drill-name">Speed Training
+                                        Drills</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">8:25–8:30</span><span
+                                        class="drill-name">Recovery Break</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('tue_footwork')"><span
+                                        class="time-slot">8:30–8:45</span><span class="drill-name">Footwork Speed
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('tue_smashpower')"><span
+                                        class="time-slot">8:45–9:00</span><span class="drill-name">Smash Power
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('tue_half_court')"><span
+                                        class="time-slot">9:00–9:20</span><span class="drill-name">Half-Court Power
+                                        Drills</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">9:20–9:30</span><span
+                                        class="drill-name">Pre-Trainer Rest</span></li>
                             </ul>
                         </div>
 
-                        <!-- Strength & Endurance 2:00-3:00 -->
-                        <div class="session-card">
+                        <div class="session-card trainer-session">
                             <div class="session-header">
-                                <div class="time-badge">2:00 - 3:00 PM</div>
-                                <div class="intensity-badge intensity-high">STRENGTH</div>
+                                <div class="time-badge trainer">9:30 – 11:30 AM</div>
+                                <div class="intensity-badge intensity-trainer">👨‍🏫 WITH TRAINER</div>
                             </div>
-                            <div class="session-title">Tournament Strength Building</div>
+                            <div class="session-title">🔥 HARDEST DRILLS - Power Elite Training</div>
                             <ul class="drill-list">
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">2:00-2:05</span>
-                                    <span class="drill-name">Equipment Setup</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_resistance')">
-                                    <span class="time-slot">2:05-2:20</span>
-                                    <span class="drill-name">Resistance Band Training</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_core')">
-                                    <span class="time-slot">2:20-2:35</span>
-                                    <span class="drill-name">Core Stability Advanced</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_smashpower')">
-                                    <span class="time-slot">2:35-2:50</span>
-                                    <span class="drill-name">Smash Power Enhancement</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">2:50-3:00</span>
-                                    <span class="drill-name">Active Recovery</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Endurance & Recovery 3:00-4:00 -->
-                        <div class="session-card">
-                            <div class="session-header">
-                                <div class="time-badge">3:00 - 4:00 PM</div>
-                                <div class="intensity-badge intensity-medium">ENDURANCE</div>
-                            </div>
-                            <div class="session-title">Match Endurance Training</div>
-                            <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('tue_circuit')">
-                                    <span class="time-slot">3:00-3:20</span>
-                                    <span class="drill-name">Badminton Circuit Training</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_rallies')">
-                                    <span class="time-slot">3:20-3:40</span>
-                                    <span class="drill-name">Extended Rally Training</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">3:40-3:45</span>
-                                    <span class="drill-name">Hydration Break</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('tue_flexibility')">
-                                    <span class="time-slot">3:45-4:00</span>
-                                    <span class="drill-name">Flexibility & Mobility</span>
-                                </li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_half_court')"><span
+                                        class="time-slot">9:30–9:45</span><span class="drill-name">Half-Court Power
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_smash_endurance')">
+                                    <span class="time-slot">9:45–10:00</span><span class="drill-name">Smash Machine
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_speed_training')"><span
+                                        class="time-slot">10:00–10:15</span><span class="drill-name">Speed Kill
+                                        Drills</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">10:15–10:20</span><span
+                                        class="drill-name">Oxygen Recovery</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_pace_training')"><span
+                                        class="time-slot">10:20–10:35</span><span class="drill-name">Change of Pace
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_defense_drill')"><span
+                                        class="time-slot">10:35–10:50</span><span class="drill-name">Defensive Power
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_multifeed_hell')"><span
+                                        class="time-slot">10:50–11:05</span><span class="drill-name">Multi-Feed Power
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_footwork_torture')">
+                                    <span class="time-slot">11:05–11:20</span><span class="drill-name">Footwork Power
+                                        Challenge</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_cooldown')"><span
+                                        class="time-slot">11:20–11:30</span><span class="drill-name">Cool Down &
+                                        Recovery</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- WEDNESDAY SCHEDULE - 7:20 AM to 11:35 AM -->
+                <!-- WEDNESDAY 1:00–4:00 PM -->
                 <div class="day-schedule" id="wednesday">
                     <div class="day-header">
-                        <div class="day-title">Wednesday - Tactical & Strategic Training</div>
-                        <div class="day-focus">🧠 Tournament Strategy & Mental Preparation</div>
+                        <div class="day-title">Wednesday — Tactical & Strategic</div>
+                        <div class="day-focus">Daily fundamentals + strategy + trainer session</div>
                     </div>
-
                     <div class="session-grid">
-                        <!-- Morning Preparation 7:20-8:40 -->
                         <div class="session-card">
                             <div class="session-header">
-                                <div class="time-badge">7:20 - 8:40 AM</div>
-                                <div class="intensity-badge intensity-medium">TACTICAL</div>
+                                <div class="time-badge">1:00 – 2:00 PM</div>
+                                <div class="intensity-badge intensity-medium">DAILY BASICS</div>
                             </div>
-                            <div class="session-title">Strategic Foundation</div>
+                            <div class="session-title">Daily Foundation + Tactical Base</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('wed_jogging')">
-                                    <span class="time-slot">7:20-7:30</span>
-                                    <span class="drill-name">Mental Preparation Jog</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_tactical_warmup')">
-                                    <span class="time-slot">7:30-7:45</span>
-                                    <span class="drill-name">Tactical Movement Warm-up</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_court_vision')">
-                                    <span class="time-slot">7:45-8:00</span>
-                                    <span class="drill-name">Court Vision Training</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">8:00-8:05</span>
-                                    <span class="drill-name">Strategy Discussion</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_positioning')">
-                                    <span class="time-slot">8:05-8:25</span>
-                                    <span class="drill-name">Advanced Court Positioning</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_deception')">
-                                    <span class="time-slot">8:25-8:40</span>
-                                    <span class="drill-name">Deception Techniques</span>
-                                </li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_jogging')"><span
+                                        class="time-slot">1:00–1:10</span><span class="drill-name">Daily Jogging & Court
+                                        Movement</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_stretching')"><span
+                                        class="time-slot">1:10–1:20</span><span class="drill-name">Daily Stretching &
+                                        Mobility</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('wed_warmup')"><span
+                                        class="time-slot">1:20–1:35</span><span class="drill-name">Tactical
+                                        Warm-up</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">1:35–1:40</span><span
+                                        class="drill-name">Strategy Talk</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('wed_footwork')"><span
+                                        class="time-slot">1:40–1:55</span><span class="drill-name">Footwork
+                                        Positioning</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">1:55–2:00</span><span
+                                        class="drill-name">Pre-Trainer Prep</span></li>
                             </ul>
                         </div>
 
-                        <!-- Singles Strategy 8:40-10:10 -->
-                        <div class="session-card">
+                        <div class="session-card trainer-session">
                             <div class="session-header">
-                                <div class="time-badge">8:40 - 10:10 AM</div>
-                                <div class="intensity-badge intensity-high">SINGLES</div>
+                                <div class="time-badge trainer">2:00 – 4:00 PM</div>
+                                <div class="intensity-badge intensity-trainer">👨‍🏫 WITH TRAINER</div>
                             </div>
-                            <div class="session-title">Singles Tournament Strategy</div>
+                            <div class="session-title">🔥 HARDEST DRILLS - Tactical Elite Training</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('wed_patterns')">
-                                    <span class="time-slot">8:40-8:55</span>
-                                    <span class="drill-name">Attack & Defense Patterns</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_singles_positioning')">
-                                    <span class="time-slot">8:55-9:10</span>
-                                    <span class="drill-name">Singles Court Control</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_pressure_points')">
-                                    <span class="time-slot">9:10-9:25</span>
-                                    <span class="drill-name">Pressure Point Creation</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">9:25-9:30</span>
-                                    <span class="drill-name">Tactical Review</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_counter_attack')">
-                                    <span class="time-slot">9:30-9:45</span>
-                                    <span class="drill-name">Counter-Attack Strategies</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_game_control')">
-                                    <span class="time-slot">9:45-10:00</span>
-                                    <span class="drill-name">Game Tempo Control</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">10:00-10:10</span>
-                                    <span class="drill-name">Mid-Session Recovery</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Doubles Strategy 10:10-11:35 -->
-                        <div class="session-card">
-                            <div class="session-header">
-                                <div class="time-badge">10:10 - 11:35 AM</div>
-                                <div class="intensity-badge intensity-high">DOUBLES</div>
-                            </div>
-                            <div class="session-title">Doubles Coordination & Strategy</div>
-                            <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('wed_partner_warmup')">
-                                    <span class="time-slot">10:10-10:20</span>
-                                    <span class="drill-name">Partner Coordination Warm-up</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_formation')">
-                                    <span class="time-slot">10:20-10:35</span>
-                                    <span class="drill-name">Formation Transitions</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_communication')">
-                                    <span class="time-slot">10:35-10:50</span>
-                                    <span class="drill-name">Court Communication</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">10:50-10:55</span>
-                                    <span class="drill-name">Strategy Adjustment</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_doubles_scenarios')">
-                                    <span class="time-slot">10:55-11:15</span>
-                                    <span class="drill-name">Tournament Match Scenarios</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_team_analysis')">
-                                    <span class="time-slot">11:15-11:30</span>
-                                    <span class="drill-name">Performance Analysis</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('wed_cooldown')">
-                                    <span class="time-slot">11:30-11:35</span>
-                                    <span class="drill-name">Strategic Cool Down</span>
-                                </li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_doubles_drill')"><span
+                                        class="time-slot">2:00–2:15</span><span class="drill-name">Doubles Attacking
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_pace_training')"><span
+                                        class="time-slot">2:15–2:30</span><span class="drill-name">Pace Change Master
+                                        Class</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_defense_drill')"><span
+                                        class="time-slot">2:30–2:45</span><span class="drill-name">Tactical Defense
+                                        Training</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">2:45–2:50</span><span
+                                        class="drill-name">Tactical Analysis</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_half_court')"><span
+                                        class="time-slot">2:50–3:05</span><span class="drill-name">Half-Court Tactical
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_footwork_torture')">
+                                    <span class="time-slot">3:05–3:20</span><span class="drill-name">Tactical Footwork
+                                        Torture</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_multifeed_hell')"><span
+                                        class="time-slot">3:20–3:35</span><span class="drill-name">Tactical Multi-Feed
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_speed_training')"><span
+                                        class="time-slot">3:35–3:50</span><span class="drill-name">Tactical Speed
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_cooldown')"><span
+                                        class="time-slot">3:50–4:00</span><span class="drill-name">Cool Down &
+                                        Recovery</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- THURSDAY SCHEDULE - 1:00 PM to 4:00 PM -->
+                <!-- THURSDAY 7:30–11:30 AM -->
                 <div class="day-schedule" id="thursday">
                     <div class="day-header">
-                        <div class="day-title">Thursday - Speed, Agility & Reaction Training</div>
-                        <div class="day-focus">⚡ Elite Speed & Court Movement</div>
+                        <div class="day-title">Thursday — Speed, Agility & Reaction</div>
+                        <div class="day-focus">Daily fundamentals + elite movement + trainer session</div>
                     </div>
-
                     <div class="session-grid">
-                        <!-- Speed Foundation 1:00-2:00 -->
                         <div class="session-card">
                             <div class="session-header">
-                                <div class="time-badge">1:00 - 2:00 PM</div>
-                                <div class="intensity-badge intensity-high">SPEED</div>
+                                <div class="time-badge">7:30 – 9:30 AM</div>
+                                <div class="intensity-badge intensity-medium">DAILY BASICS</div>
                             </div>
-                            <div class="session-title">Elite Speed Development</div>
+                            <div class="session-title">Daily Foundation + Speed Base</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('thu_neural_activation')">
-                                    <span class="time-slot">1:00-1:10</span>
-                                    <span class="drill-name">Neural Activation Protocol</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_ladder_advanced')">
-                                    <span class="time-slot">1:10-1:25</span>
-                                    <span class="drill-name">Advanced Speed Ladder</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_acceleration')">
-                                    <span class="time-slot">1:25-1:40</span>
-                                    <span class="drill-name">Court Acceleration Training</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">1:40-1:45</span>
-                                    <span class="drill-name">Speed Recovery</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_direction_change')">
-                                    <span class="time-slot">1:45-2:00</span>
-                                    <span class="drill-name">Explosive Direction Changes</span>
-                                </li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_jogging')"><span
+                                        class="time-slot">7:30–7:40</span><span class="drill-name">Daily Jogging & Court
+                                        Movement</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_stretching')"><span
+                                        class="time-slot">7:40–7:50</span><span class="drill-name">Daily Stretching &
+                                        Mobility</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_speed_warmup')"><span
+                                        class="time-slot">7:50–8:05</span><span class="drill-name">Speed Training
+                                        Warm-up</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_footwork_speed')"><span
+                                        class="time-slot">8:05–8:20</span><span class="drill-name">Footwork Speed
+                                        Training</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">8:20–8:25</span><span
+                                        class="drill-name">Speed Recovery</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_speed_training')"><span
+                                        class="time-slot">8:25–8:40</span><span class="drill-name">Badminton Speed
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_reaction_training')"><span
+                                        class="time-slot">8:40–8:55</span><span class="drill-name">Reaction Speed
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_footwork')"><span
+                                        class="time-slot">8:55–9:10</span><span class="drill-name">4-Corner
+                                        Footwork</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('thu_half_court')"><span
+                                        class="time-slot">9:10–9:25</span><span class="drill-name">Half-Court Speed
+                                        Drills</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">9:25–9:30</span><span
+                                        class="drill-name">Pre-Trainer Rest</span></li>
                             </ul>
                         </div>
 
-                        <!-- Agility & Coordination 2:00-3:00 -->
-                        <div class="session-card">
+                        <div class="session-card trainer-session">
                             <div class="session-header">
-                                <div class="time-badge">2:00 - 3:00 PM</div>
-                                <div class="intensity-badge intensity-high">AGILITY</div>
+                                <div class="time-badge trainer">9:30 – 11:30 AM</div>
+                                <div class="intensity-badge intensity-trainer">👨‍🏫 WITH TRAINER</div>
                             </div>
-                            <div class="session-title">Tournament Agility Training</div>
+                            <div class="session-title">🔥 HARDEST DRILLS - Speed Elite Training</div>
                             <ul class="drill-list">
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">2:00-2:05</span>
-                                    <span class="drill-name">Equipment Setup</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_cone_complex')">
-                                    <span class="time-slot">2:05-2:20</span>
-                                    <span class="drill-name">Complex Cone Patterns</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_reactive_agility')">
-                                    <span class="time-slot">2:20-2:35</span>
-                                    <span class="drill-name">Reactive Agility Drills</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_court_coverage')">
-                                    <span class="time-slot">2:35-2:50</span>
-                                    <span class="drill-name">Elite Court Coverage</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">2:50-3:00</span>
-                                    <span class="drill-name">Movement Recovery</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Reaction & Coordination 3:00-4:00 -->
-                        <div class="session-card">
-                            <div class="session-header">
-                                <div class="time-badge">3:00 - 4:00 PM</div>
-                                <div class="intensity-badge intensity-medium">REACTION</div>
-                            </div>
-                            <div class="session-title">Elite Reaction Training</div>
-                            <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('thu_reaction_time')">
-                                    <span class="time-slot">3:00-3:15</span>
-                                    <span class="drill-name">Reaction Time Enhancement</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_hand_eye')">
-                                    <span class="time-slot">3:15-3:30</span>
-                                    <span class="drill-name">Hand-Eye Coordination Elite</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_anticipation')">
-                                    <span class="time-slot">3:30-3:45</span>
-                                    <span class="drill-name">Shot Anticipation Training</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('thu_recovery_stretching')">
-                                    <span class="time-slot">3:45-4:00</span>
-                                    <span class="drill-name">Recovery & Flexibility</span>
-                                </li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_speed_training')"><span
+                                        class="time-slot">9:30–9:45</span><span class="drill-name">Speed Demon
+                                        Challenge</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_footwork_torture')">
+                                    <span class="time-slot">9:45–10:00</span><span class="drill-name">Footwork Speed
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_reaction_training')">
+                                    <span class="time-slot">10:00–10:15</span><span class="drill-name">Reaction Hell
+                                        Training</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">10:15–10:20</span><span
+                                        class="drill-name">Neural Recovery</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_half_court')"><span
+                                        class="time-slot">10:20–10:35</span><span class="drill-name">Half-Court Speed
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_multifeed_hell')"><span
+                                        class="time-slot">10:35–10:50</span><span class="drill-name">Multi-Feed Speed
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_pace_training')"><span
+                                        class="time-slot">10:50–11:05</span><span class="drill-name">Speed Pace
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_defense_drill')"><span
+                                        class="time-slot">11:05–11:20</span><span class="drill-name">Defensive Speed
+                                        Training</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_cooldown')"><span
+                                        class="time-slot">11:20–11:30</span><span class="drill-name">Cool Down &
+                                        Recovery</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- FRIDAY SCHEDULE - 7:20 AM to 11:35 AM -->
+                <!-- FRIDAY 1:00–4:00 PM -->
                 <div class="day-schedule" id="friday">
                     <div class="day-header">
-                        <div class="day-title">Friday - Tournament Match Play & Competition</div>
-                        <div class="day-focus">🏆 Elite Competition Training</div>
+                        <div class="day-title">Friday — Tournament Match Play</div>
+                        <div class="day-focus">Daily fundamentals + competition + trainer session</div>
                     </div>
-
                     <div class="session-grid">
-                        <!-- Pre-Competition 7:20-8:40 -->
                         <div class="session-card">
                             <div class="session-header">
-                                <div class="time-badge">7:20 - 8:40 AM</div>
-                                <div class="intensity-badge intensity-medium">PRE-COMP</div>
+                                <div class="time-badge">1:00 – 2:00 PM</div>
+                                <div class="intensity-badge intensity-medium">DAILY BASICS</div>
                             </div>
-                            <div class="session-title">Tournament Preparation</div>
+                            <div class="session-title">Daily Foundation + Pre‑Competition</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('fri_mental_prep')">
-                                    <span class="time-slot">7:20-7:30</span>
-                                    <span class="drill-name">Mental Preparation Protocol</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_pregame_warmup')">
-                                    <span class="time-slot">7:30-7:45</span>
-                                    <span class="drill-name">Competition Warm-up Routine</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_serving_practice')">
-                                    <span class="time-slot">7:45-8:00</span>
-                                    <span class="drill-name">Match Serving Practice</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">8:00-8:05</span>
-                                    <span class="drill-name">Focus & Breathing</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_rallying_warmup')">
-                                    <span class="time-slot">8:05-8:25</span>
-                                    <span class="drill-name">Progressive Rally Warm-up</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_timing_adjustment')">
-                                    <span class="time-slot">8:25-8:40</span>
-                                    <span class="drill-name">Timing Adjustment Drills</span>
-                                </li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_jogging')"><span
+                                        class="time-slot">1:00–1:10</span><span class="drill-name">Daily Jogging & Court
+                                        Movement</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_stretching')"><span
+                                        class="time-slot">1:10–1:20</span><span class="drill-name">Daily Stretching &
+                                        Mobility</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('fri_warmup')"><span
+                                        class="time-slot">1:20–1:30</span><span class="drill-name">Competition
+                                        Warm-up</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('fri_half_court')"><span
+                                        class="time-slot">1:30–1:45</span><span class="drill-name">Match Preparation
+                                        Drills</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">1:45–1:50</span><span
+                                        class="drill-name">Focus & Breathing</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('fri_doubles')"><span
+                                        class="time-slot">1:50–2:00</span><span class="drill-name">Match Play
+                                        Warm-up</span></li>
                             </ul>
                         </div>
 
-                        <!-- Competition Training 8:40-10:10 -->
-                        <div class="session-card">
+                        <div class="session-card trainer-session">
                             <div class="session-header">
-                                <div class="time-badge">8:40 - 10:10 AM</div>
-                                <div class="intensity-badge intensity-high">COMPETITION</div>
+                                <div class="time-badge trainer">2:00 – 4:00 PM</div>
+                                <div class="intensity-badge intensity-trainer">👨‍🏫 WITH TRAINER</div>
                             </div>
-                            <div class="session-title">High-Pressure Training</div>
+                            <div class="session-title">🔥 HARDEST DRILLS - Tournament Elite Training</div>
                             <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('fri_pressure_drills')">
-                                    <span class="time-slot">8:40-8:55</span>
-                                    <span class="drill-name">High-Pressure Situation Drills</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_tournament_simulation')">
-                                    <span class="time-slot">8:55-9:20</span>
-                                    <span class="drill-name">Tournament Match Simulation</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">9:20-9:25</span>
-                                    <span class="drill-name">Between Games Rest</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_endgame_scenarios')">
-                                    <span class="time-slot">9:25-9:45</span>
-                                    <span class="drill-name">Endgame Scenarios</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_comeback_training')">
-                                    <span class="time-slot">9:45-10:05</span>
-                                    <span class="drill-name">Comeback Situation Training</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">10:05-10:10</span>
-                                    <span class="drill-name">Performance Review Break</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Tournament Match Play 10:10-11:35 -->
-                        <div class="session-card">
-                            <div class="session-header">
-                                <div class="time-badge">10:10 - 11:35 AM</div>
-                                <div class="intensity-badge intensity-high">MATCH PLAY</div>
-                            </div>
-                            <div class="session-title">Elite Match Play Training</div>
-                            <ul class="drill-list">
-                                <li class="drill-item has-video" onclick="showVideo('fri_match_warmup')">
-                                    <span class="time-slot">10:10-10:15</span>
-                                    <span class="drill-name">Pre-Match Protocol</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_full_matches')">
-                                    <span class="time-slot">10:15-11:00</span>
-                                    <span class="drill-name">Full Competitive Matches</span>
-                                </li>
-                                <li class="drill-item rest-item">
-                                    <span class="time-slot">11:00-11:05</span>
-                                    <span class="drill-name">Match Analysis Break</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_tactical_adjustments')">
-                                    <span class="time-slot">11:05-11:20</span>
-                                    <span class="drill-name">Live Tactical Adjustments</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_performance_review')">
-                                    <span class="time-slot">11:20-11:30</span>
-                                    <span class="drill-name">Performance Analysis</span>
-                                </li>
-                                <li class="drill-item has-video" onclick="showVideo('fri_week_review')">
-                                    <span class="time-slot">11:30-11:35</span>
-                                    <span class="drill-name">Weekly Training Review</span>
-                                </li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_doubles_drill')"><span
+                                        class="time-slot">2:00–2:15</span><span class="drill-name">Tournament Doubles
+                                        Hell</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_half_court')"><span
+                                        class="time-slot">2:15–2:30</span><span class="drill-name">Match Pressure
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_pace_training')"><span
+                                        class="time-slot">2:30–2:45</span><span class="drill-name">Match Pace
+                                        Hell</span></li>
+                                <li class="drill-item rest-item"><span class="time-slot">2:45–2:50</span><span
+                                        class="drill-name">Championship Breathing</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_defense_drill')"><span
+                                        class="time-slot">2:50–3:05</span><span class="drill-name">Match Defense
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_multifeed_hell')"><span
+                                        class="time-slot">3:05–3:20</span><span class="drill-name">Tournament
+                                        Multi-Feed</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_speed_training')"><span
+                                        class="time-slot">3:20–3:35</span><span class="drill-name">Match Speed
+                                        Training</span></li>
+                                <li class="drill-item trainer-drill" onclick="showVideo('trainer_footwork_torture')">
+                                    <span class="time-slot">3:35–3:50</span><span class="drill-name">Tournament
+                                        Footwork</span></li>
+                                <li class="drill-item has-video" onclick="showVideo('daily_cooldown')"><span
+                                        class="time-slot">3:50–4:00</span><span class="drill-name">Cool Down &
+                                        Recovery</span></li>
                             </ul>
                         </div>
                     </div>
@@ -1038,47 +901,37 @@
             </div>
         </div>
 
-        <!-- Video Modal -->
+        <!-- Modal -->
         <div class="video-modal" id="videoModal">
             <div class="video-content">
                 <div class="video-header">
                     <h3 class="video-title" id="modalTitle">Drill Video</h3>
                     <button class="close-modal" onclick="closeModal()">✖ Close</button>
                 </div>
-                <iframe class="video-iframe" id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
-                <div class="video-description" id="modalDescription">
-                    Video description will appear here.
-                </div>
+                <iframe class="video-iframe" id="modalVideo" src="" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+                <div class="video-description" id="modalDescription">Video description will appear here.</div>
             </div>
         </div>
     </div>
 
     <script>
-        // LOGIN CREDENTIALS
-        const validCredentials = {
-            email: "pidoybadminton@admin.com",
-            password: "pidoybadminton1234"
-        };
-
-        // LOGIN FUNCTIONALITY
+        /* ===== Login ===== */
+        const validCredentials = { email: "pidoybadminton@admin.com", password: "pidoybadminton1234" };
         document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (email === validCredentials.email && password === validCredentials.password) {
+            const email = document.getElementById('email').value.trim();
+            const pass = document.getElementById('password').value;
+            const err = document.getElementById('errorMessage');
+            if (email === validCredentials.email && pass === validCredentials.password) {
                 sessionStorage.setItem('isLoggedIn', 'true');
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('mainContent').classList.add('active');
             } else {
-                errorMessage.style.display = 'block';
+                err.style.display = 'block';
                 document.getElementById('password').value = '';
             }
         });
-
-        // LOGOUT FUNCTIONALITY
         function logout() {
             sessionStorage.removeItem('isLoggedIn');
             document.getElementById('loginContainer').style.display = 'flex';
@@ -1086,8 +939,6 @@
             document.getElementById('loginForm').reset();
             document.getElementById('errorMessage').style.display = 'none';
         }
-
-        // CHECK LOGIN STATUS ON PAGE LOAD
         window.addEventListener('load', function () {
             if (sessionStorage.getItem('isLoggedIn') === 'true') {
                 document.getElementById('loginContainer').style.display = 'none';
@@ -1095,401 +946,108 @@
             }
         });
 
-        // COMPLETE DRILL VIDEO DATABASE
-        const drillVideos = {
-            // MONDAY VIDEOS - Tournament Technical Mastery
-            mon_jogging: {
-                title: "Light Jogging & Court Familiarization",
-                url: "https://www.youtube.com/embed/D2QDyXXJtVc",
-                description: "Light jogging routine with court movement patterns to activate muscles and prepare for intensive technical training."
-            },
-            mon_stretching: {
-                title: "Dynamic Stretching & Joint Mobility",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Tournament-level dynamic stretching focusing on badminton-specific movements and joint mobility preparation."
-            },
-            mon_shadow: {
-                title: "Advanced Shadow Training",
-                url: "https://www.youtube.com/embed/D2QDyXXJtVc",
-                description: "Elite shadow badminton training with complex movement patterns for tournament technique development."
-            },
-            mon_grip: {
-                title: "Grip Technique Mastery",
-                url: "https://www.youtube.com/embed/J-YAqfLpzsQ",
-                description: "Advanced grip techniques and transitions for tournament-level shot execution and control."
-            },
-            mon_serves: {
-                title: "Tournament Serve Variations",
-                url: "https://www.youtube.com/embed/J-YAqfLpzsQ",
-                description: "Master all serve variations with deception and placement for competitive advantage."
-            },
-            mon_clears: {
-                title: "Power Clear Technique",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Tournament-level clear technique for maximum power and accuracy under pressure."
-            },
-            mon_drops: {
-                title: "Deceptive Drop Shots",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Advanced drop shot techniques with deception to create winning opportunities."
-            },
-            mon_smash: {
-                title: "Tournament Smash Power",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Elite smash technique for maximum power and steep angles in tournament play."
-            },
-            mon_netplay: {
-                title: "Advanced Net Play",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Tournament net play strategies including net kills, lifts, and tactical positioning."
-            },
-            mon_defense: {
-                title: "Defensive Returns",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Elite defensive techniques to turn defense into counter-attack opportunities."
-            },
-            mon_multishuttle: {
-                title: "High-Speed Multi-Shuttle",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Intensive multi-shuttle training at tournament pace for consistency and endurance."
-            },
-            mon_footwork: {
-                title: "Advanced Footwork Patterns",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Elite footwork patterns for optimal court coverage and shot preparation."
-            },
-            mon_combination: {
-                title: "Shot Combination Drills",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Advanced shot combinations for creating winning sequences in tournament play."
-            },
-            mon_conditioning: {
-                title: "Court Conditioning",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "High-intensity court conditioning for tournament-level stamina and endurance."
-            },
-            mon_cooldown: {
-                title: "Cool Down & Recovery",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Proper cool-down protocol for optimal recovery and injury prevention."
-            },
-
-            // TUESDAY VIDEOS - Power & Athletic Development
-            tue_activation: {
-                title: "Neural Activation Warm-up",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Specialized neural activation protocol to prepare nervous system for power training."
-            },
-            tue_plyometrics: {
-                title: "Plyometric Jump Training",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Advanced plyometric exercises for explosive power development in badminton movements."
-            },
-            tue_medicine: {
-                title: "Medicine Ball Power",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Medicine ball exercises targeting badminton-specific power development and core strength."
-            },
-            tue_sprint: {
-                title: "Court Sprint Training",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Court-specific sprint training for explosive acceleration and deceleration."
-            },
-            tue_resistance: {
-                title: "Resistance Band Training",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Advanced resistance training for badminton-specific muscle groups and movement patterns."
-            },
-            tue_core: {
-                title: "Core Stability Advanced",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Elite core stability training for power transfer and injury prevention."
-            },
-            tue_smashpower: {
-                title: "Smash Power Enhancement",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Specific training to develop explosive smash power and technique refinement."
-            },
-            tue_circuit: {
-                title: "Badminton Circuit Training",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "High-intensity circuit training combining strength, endurance, and badminton movements."
-            },
-            tue_rallies: {
-                title: "Extended Rally Training",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Long rally training to build match endurance and consistent shot-making."
-            },
-            tue_flexibility: {
-                title: "Flexibility & Mobility",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Comprehensive flexibility routine for optimal range of motion and recovery."
-            },
-
-            // WEDNESDAY VIDEOS - Tactical & Strategic Training
-            wed_jogging: {
-                title: "Mental Preparation Jog",
-                url: "https://www.youtube.com/embed/D2QDyXXJtVc",
-                description: "Light jogging with mental preparation and visualization for tactical training."
-            },
-            wed_tactical_warmup: {
-                title: "Tactical Movement Warm-up",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Warm-up routine incorporating tactical awareness and decision-making elements."
-            },
-            wed_court_vision: {
-                title: "Court Vision Training",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Advanced court vision and peripheral awareness training for tactical advantage."
-            },
-            wed_positioning: {
-                title: "Advanced Court Positioning",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Elite court positioning strategies for optimal shot selection and court control."
-            },
-            wed_deception: {
-                title: "Deception Techniques",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Advanced deception techniques to mislead opponents and create winning opportunities."
-            },
-            wed_patterns: {
-                title: "Attack & Defense Patterns",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Tournament-level attack and defense patterns for strategic advantage."
-            },
-            wed_singles_positioning: {
-                title: "Singles Court Control",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Advanced singles positioning for optimal court control and shot creation."
-            },
-            wed_pressure_points: {
-                title: "Pressure Point Creation",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Creating and exploiting pressure points in singles play for tactical advantage."
-            },
-            wed_counter_attack: {
-                title: "Counter-Attack Strategies",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Advanced counter-attack strategies to turn defensive positions into offensive opportunities."
-            },
-            wed_game_control: {
-                title: "Game Tempo Control",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Controlling game tempo and rhythm to dictate match flow and opponent responses."
-            },
-            wed_partner_warmup: {
-                title: "Partner Coordination Warm-up",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Doubles-specific warm-up to develop partner coordination and communication."
-            },
-            wed_formation: {
-                title: "Formation Transitions",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Advanced doubles formation transitions for optimal court coverage and attack."
-            },
-            wed_communication: {
-                title: "Court Communication",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Effective court communication strategies for doubles coordination and tactical execution."
-            },
-            wed_doubles_scenarios: {
-                title: "Tournament Match Scenarios",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Practice specific doubles match scenarios and tactical situations from tournament play."
-            },
-            wed_team_analysis: {
-                title: "Performance Analysis",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Video analysis and performance review for tactical improvement and strategy refinement."
-            },
-            wed_cooldown: {
-                title: "Strategic Cool Down",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Cool-down routine with tactical review and mental preparation consolidation."
-            },
-
-            // THURSDAY VIDEOS - Speed, Agility & Reaction Training
-            thu_neural_activation: {
-                title: "Neural Activation Protocol",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Advanced neural activation protocol to optimize nervous system for speed training."
-            },
-            thu_ladder_advanced: {
-                title: "Advanced Speed Ladder",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Elite speed ladder exercises for foot speed, coordination, and movement precision."
-            },
-            thu_acceleration: {
-                title: "Court Acceleration Training",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Court-specific acceleration training for explosive first steps and direction changes."
-            },
-            thu_direction_change: {
-                title: "Explosive Direction Changes",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Advanced direction change techniques for optimal court movement and positioning."
-            },
-            thu_cone_complex: {
-                title: "Complex Cone Patterns",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Complex cone drill patterns to improve agility, decision-making, and movement efficiency."
-            },
-            thu_reactive_agility: {
-                title: "Reactive Agility Drills",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Reactive agility training using visual and auditory cues for game-like responses."
-            },
-            thu_court_coverage: {
-                title: "Elite Court Coverage",
-                url: "https://www.youtube.com/embed/fBa08o5GEqw",
-                description: "Advanced court coverage techniques for optimal positioning and shot preparation."
-            },
-            thu_reaction_time: {
-                title: "Reaction Time Enhancement",
-                url: "https://www.youtube.com/embed/d4QJMcvGfAc",
-                description: "Specialized reaction time training for faster responses to opponent shots and movements."
-            },
-            thu_hand_eye: {
-                title: "Hand-Eye Coordination Elite",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Elite hand-eye coordination exercises for precision shot-making and ball tracking."
-            },
-            thu_anticipation: {
-                title: "Shot Anticipation Training",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Advanced shot anticipation training to read opponent intentions and prepare responses."
-            },
-            thu_recovery_stretching: {
-                title: "Recovery & Flexibility",
-                url: "https://www.youtube.com/embed/F7OhhGe107Q",
-                description: "Recovery-focused stretching and flexibility routine for speed training adaptation."
-            },
-
-            // FRIDAY VIDEOS - Tournament Match Play & Competition
-            fri_mental_prep: {
-                title: "Mental Preparation Protocol",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Advanced mental preparation techniques for tournament competition and pressure situations."
-            },
-            fri_pregame_warmup: {
-                title: "Competition Warm-up Routine",
-                url: "https://www.youtube.com/embed/D2QDyXXJtVc",
-                description: "Tournament-specific warm-up routine for optimal physical and mental preparation."
-            },
-            fri_serving_practice: {
-                title: "Match Serving Practice",
-                url: "https://www.youtube.com/embed/J-YAqfLpzsQ",
-                description: "Tournament serving practice with pressure simulation and strategic placement."
-            },
-            fri_rallying_warmup: {
-                title: "Progressive Rally Warm-up",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Progressive rally warm-up to build timing and rhythm for competitive play."
-            },
-            fri_timing_adjustment: {
-                title: "Timing Adjustment Drills",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Timing adjustment exercises for different shuttle speeds and playing conditions."
-            },
-            fri_pressure_drills: {
-                title: "High-Pressure Situation Drills",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "High-pressure training drills to simulate tournament match conditions and stress."
-            },
-            fri_tournament_simulation: {
-                title: "Tournament Match Simulation",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Full tournament match simulation with proper scoring and competitive intensity."
-            },
-            fri_endgame_scenarios: {
-                title: "Endgame Scenarios",
-                url: "https://www.youtube.com/embed/7Oo98XY0rtA",
-                description: "Practice critical endgame scenarios and decision-making under tournament pressure."
-            },
-            fri_comeback_training: {
-                title: "Comeback Situation Training",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Mental and tactical training for comeback situations and maintaining composure."
-            },
-            fri_match_warmup: {
-                title: "Pre-Match Protocol",
-                url: "https://www.youtube.com/embed/D2QDyXXJtVc",
-                description: "Complete pre-match protocol for tournament preparation and optimal performance."
-            },
-            fri_full_matches: {
-                title: "Full Competitive Matches",
-                url: "https://www.youtube.com/embed/S2-G_tbIj80",
-                description: "Full competitive matches with tournament rules and intensity for match experience."
-            },
-            fri_tactical_adjustments: {
-                title: "Live Tactical Adjustments",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Practice making tactical adjustments during live play and competitive situations."
-            },
-            fri_performance_review: {
-                title: "Performance Analysis",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Post-match performance analysis and feedback for continuous improvement."
-            },
-            fri_week_review: {
-                title: "Weekly Training Review",
-                url: "https://www.youtube.com/embed/f9m_9FkVj5s",
-                description: "Comprehensive weekly training review and planning for next training cycle."
-            }
-        };
-
-        // EXISTING FUNCTIONS
-        function showDay(day) {
-            document.querySelectorAll('.day-schedule').forEach(schedule => {
-                schedule.classList.remove('active');
-            });
-
-            document.querySelectorAll('.day-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            document.getElementById(day).classList.add('active');
-            event.target.classList.add('active');
-
+        /* ===== Day Tabs ===== */
+        function showDay(dayId, el) {
+            document.querySelectorAll('.day-schedule').forEach(d => d.classList.remove('active'));
+            document.getElementById(dayId).classList.add('active');
+            document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+            if (el) el.classList.add('active');
             closeModal();
         }
 
-        function showVideo(drillId) {
-            const video = drillVideos[drillId];
-            if (!video) return;
+        /* ===== Timed YouTube Builder (1–20s) ===== */
+        function buildTimedYouTube(url, start = 0, len = 15) {
+            const s = Math.max(0, Math.floor(start));
+            const e = s + Math.max(1, Math.min(20, Math.floor(len)));
+            const qs = new URLSearchParams({
+                start: String(s),
+                end: String(e),
+                autoplay: '1',
+                rel: '0',
+                modestbranding: '1',
+                playsinline: '1',
+                controls: '1'
+            }).toString();
+            return `${url}?${qs}`;
+        }
 
+        /* ===== PROPERLY MATCHED BADMINTON DRILL VIDEOS ===== */
+        const drillVideos = {
+            /* DAILY ESSENTIALS - Used every day */
+            daily_jogging: { title: "Daily Jogging & Court Movement", url: "https://www.youtube.com/embed/GDzW9T3LoaI", start: 10, len: 15, description: "Badminton-specific jogging and court movement exercises for daily warm-up." },
+            daily_stretching: { title: "Daily Stretching & Mobility", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 131, len: 18, description: "Essential daily stretches specifically for badminton players - balance and mobility." },
+            daily_cooldown: { title: "Daily Cool Down & Stretching", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 160, len: 15, description: "Daily post-training cool down and recovery stretches for badminton." },
+
+            /* REGULAR TRAINING DRILLS - All properly matched */
+            mon_shadow: { title: "Advanced Shadow Training", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 45, len: 16, description: "Badminton shadow training with proper footwork patterns." },
+            mon_grip: { title: "Grip Technique Mastery", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 25, len: 15, description: "Proper badminton grip techniques and hand positioning." },
+
+            /* TUESDAY - Power & Speed Training */
+            tue_warmup: { title: "Badminton Specific Warm-up", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 5, len: 18, description: "Complete badminton-specific warm-up routine in 10 minutes." },
+            tue_speed_training: { title: "Speed Training Drills", url: "https://www.youtube.com/embed/J8Sn8I0Lpuc", start: 89, len: 16, description: "Badminton speed training - faster footwork and movement drills." },
+            tue_footwork: { title: "Footwork Speed Training", url: "https://www.youtube.com/embed/J8Sn8I0Lpuc", start: 102, len: 18, description: "Chasse movement and footwork speed training for badminton." },
+            tue_smashpower: { title: "Smash Power Training", url: "https://www.youtube.com/embed/xOxZy9Vq9d0", start: 30, len: 18, description: "2 badminton exercises for change of pace smash shots." },
+            tue_half_court: { title: "Half-Court Power Drills", url: "https://www.youtube.com/embed/d4QJMcvGfAc", start: 21, len: 20, description: "Badminton training on half-court - 8 exercises to improve power and consistency." },
+
+            /* WEDNESDAY - Tactical Training */
+            wed_warmup: { title: "Tactical Warm-up", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 65, len: 15, description: "Tactical movement warm-up for badminton strategy training." },
+            wed_footwork: { title: "Footwork Positioning", url: "https://www.youtube.com/embed/fBa08o5GEqw", start: 30, len: 18, description: "4-corner footwork - step-by-step badminton tutorial for court positioning." },
+
+            /* THURSDAY - Speed & Agility */
+            thu_speed_warmup: { title: "Speed Training Warm-up", url: "https://www.youtube.com/embed/GDzW9T3LoaI", start: 25, len: 15, description: "Speed improvement warm-up for badminton reaction time." },
+            thu_footwork_speed: { title: "Footwork Speed Training", url: "https://www.youtube.com/embed/J8Sn8I0Lpuc", start: 50, len: 16, description: "Badminton footwork speed training with specific drills." },
+            thu_speed_training: { title: "Badminton Speed Training", url: "https://www.youtube.com/embed/J8Sn8I0Lpuc", start: 10, len: 18, description: "Tips for faster footwork and speed training in badminton." },
+            thu_reaction_training: { title: "Reaction Speed Training", url: "https://www.youtube.com/embed/GDzW9T3LoaI", start: 45, len: 16, description: "Reaction time training drills for badminton speed improvement." },
+            thu_footwork: { title: "4-Corner Footwork", url: "https://www.youtube.com/embed/fBa08o5GEqw", start: 60, len: 20, description: "Complete 4-corner footwork tutorial for badminton court coverage." },
+            thu_half_court: { title: "Half-Court Speed Drills", url: "https://www.youtube.com/embed/d4QJMcvGfAc", start: 56, len: 18, description: "Half-court speed training exercises for badminton players." },
+
+            /* FRIDAY - Match Play */
+            fri_warmup: { title: "Competition Warm-up", url: "https://www.youtube.com/embed/MTX-CAy0WRY", start: 80, len: 15, description: "Competition-specific warm-up routine for badminton matches." },
+            fri_half_court: { title: "Match Preparation Drills", url: "https://www.youtube.com/embed/d4QJMcvGfAc", start: 100, len: 18, description: "Half-court match preparation and consistency drills." },
+            fri_doubles: { title: "Match Play Warm-up", url: "https://www.youtube.com/embed/ubaRiFYIyX4", start: 20, len: 16, description: "Badminton aggressive attacking doubles drill for match preparation." },
+
+            /* TRAINER SESSIONS - HARDEST DRILLS (All properly matched to real badminton training) */
+            trainer_multifeed_hell: { title: "Multi-Feed Hell Training", url: "https://www.youtube.com/embed/d4QJMcvGfAc", start: 120, len: 20, description: "Extreme multi-shuttle feeding drills at tournament pace. Half-court intensive training." },
+            trainer_defense_drill: { title: "Defensive Training Hell", url: "https://www.youtube.com/embed/2UqbX6aOFN0", start: 60, len: 18, description: "Badminton training drills to improve your defense under extreme pressure." },
+            trainer_smash_endurance: { title: "Continuous Smash Torture", url: "https://www.youtube.com/embed/xOxZy9Vq9d0", start: 70, len: 20, description: "Change of pace smash training - continuous smashing until failure." },
+            trainer_footwork_torture: { title: "4-Corner Footwork Torture", url: "https://www.youtube.com/embed/fBa08o5GEqw", start: 120, len: 20, description: "4-corner footwork at extreme speed and intensity - tournament preparation." },
+            trainer_speed_training: { title: "Speed Training Hell", url: "https://www.youtube.com/embed/J8Sn8I0Lpuc", start: 130, len: 18, description: "Extreme badminton speed training - footwork at maximum intensity." },
+            trainer_half_court: { title: "Half-Court Training Hell", url: "https://www.youtube.com/embed/d4QJMcvGfAc", start: 180, len: 20, description: "Half-court training at extreme intensity - 8 exercises at maximum pace." },
+            trainer_pace_training: { title: "Change of Pace Training", url: "https://www.youtube.com/embed/xOxZy9Vq9d0", start: 10, len: 18, description: "2 badminton exercises for change of pace at extreme intensity." },
+            trainer_doubles_drill: { title: "Doubles Attacking Hell", url: "https://www.youtube.com/embed/ubaRiFYIyX4", start: 45, len: 20, description: "Badminton aggressive attacking doubles drill at tournament intensity." },
+            trainer_reaction_training: { title: "Reaction Hell Training", url: "https://www.youtube.com/embed/GDzW9T3LoaI", start: 180, len: 18, description: "Reaction time training at extreme speed for badminton improvement." }
+        };
+
+        /* ===== Modal Functions ===== */
+        function showVideo(drillId) {
+            const v = drillVideos[drillId];
+            if (!v) return;
             const modal = document.getElementById('videoModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalVideo = document.getElementById('modalVideo');
             const modalDescription = document.getElementById('modalDescription');
 
-            modalTitle.textContent = video.title;
-            modalVideo.src = video.url;
-            modalDescription.textContent = video.description;
+            modalTitle.textContent = v.title || "Drill Video";
+            modalDescription.textContent = v.description || "";
 
+            const timed = buildTimedYouTube(v.url, v.start ?? 0, v.len ?? 15);
+            modalVideo.src = timed;
             modal.classList.add('active');
         }
 
         function closeModal() {
             const modal = document.getElementById('videoModal');
             const modalVideo = document.getElementById('modalVideo');
-
             modal.classList.remove('active');
             modalVideo.src = '';
         }
 
-        // Close modal when clicking outside
         document.getElementById('videoModal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeModal();
-            }
+            if (e.target === this) closeModal();
         });
 
-        // Close modal on escape key
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
